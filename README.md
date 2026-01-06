@@ -1,45 +1,87 @@
-Overview
-========
+# 🛒 E-Commerce Data Pipeline: GCS to BigQuery via Dataproc (PySpark)
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
+## 📌 Overview
+This project implements a scalable **ETL (Extract, Transform, Load)** pipeline for e-commerce data. It orchestrates the flow of information from a Data Lake (Google Cloud Storage) to a Data Warehouse (BigQuery), using **Apache Airflow** as the orchestrator and **Dataproc Serverless (PySpark)** for heavy data processing.
 
-Project Contents
-================
+The unique value of this implementation is the **local hybrid setup**, where Airflow runs via **Astro CLI** while interacting seamlessly with Google Cloud infrastructure.
 
-Your Astro project contains the following files and folders:
+---
 
-- dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes one example DAG:
-    - `example_astronauts`: This DAG shows a simple ETL pipeline example that queries the list of astronauts currently in space from the Open Notify API and prints a statement for each astronaut. The DAG uses the TaskFlow API to define tasks in Python, and dynamic task mapping to dynamically print a statement for each astronaut. For more on how this DAG works, see our [Getting started tutorial](https://www.astronomer.io/docs/learn/get-started-with-airflow).
-- Dockerfile: This file contains a versioned Astro Runtime Docker image that provides a differentiated Airflow experience. If you want to execute other commands or overrides at runtime, specify them here.
-- include: This folder contains any additional files that you want to include as part of your project. It is empty by default.
-- packages.txt: Install OS-level packages needed for your project by adding them to this file. It is empty by default.
-- requirements.txt: Install Python packages needed for your project by adding them to this file. It is empty by default.
-- plugins: Add custom or community plugins for your project to this file. It is empty by default.
-- airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
+## 🎯 Project Objective
+The goal is to transform raw JSON data (Orders and Products) into an **enriched analytical dataset**. This enables business users to:
+* **Identify high-value orders** through automated price tiering.
+* **Monitor stock levels** in real-time.
+* **Calculate total revenue** per transaction without manual calculations.
 
-Deploy Your Project Locally
-===========================
+---
 
-Start Airflow on your local machine by running 'astro dev start'.
+## 🏗️ Architecture
+The pipeline follows a modern data stack architecture:
 
-This command will spin up five Docker containers on your machine, each for a different Airflow component:
+![Project Architecture](./Images/Diagram.png)
 
-- Postgres: Airflow's Metadata Database
-- Scheduler: The Airflow component responsible for monitoring and triggering tasks
-- DAG Processor: The Airflow component responsible for parsing DAGs
-- API Server: The Airflow component responsible for serving the Airflow UI and API
-- Triggerer: The Airflow component responsible for triggering deferred tasks
+1.  **Orchestration:** Airflow triggers ingestion and processing tasks.
+2.  **Ingestion:** Raw JSON files are loaded from **GCS** into **BigQuery** staging tables.
+3.  **Processing:** A **PySpark** job is submitted to **Dataproc Serverless** to perform complex joins and business logic.
+4.  **Storage:** The final, cleaned, and enriched data is stored in **BigQuery**.
 
-When all five containers are ready the command will open the browser to the Airflow UI at http://localhost:8080/. You should also be able to access your Postgres Database at 'localhost:5432/postgres' with username 'postgres' and password 'postgres'.
+---
 
-Note: If you already have either of the above ports allocated, you can either [stop your existing Docker containers or change the port](https://www.astronomer.io/docs/astro/cli/troubleshoot-locally#ports-are-not-available-for-my-local-airflow-webserver).
+## 📂 Repository Structure & Components
 
-Deploy Your Project to Astronomer
-=================================
+* **`/datasets`**: Contains the raw data used for this project.
+    * `products/products.json`: Catalog data (ID, name, category, price, stock).
+    * `orders/orders.json`: Transactional data (Order ID, User ID, Product ID, Date).
+* **`/scripts`**: Core transformation logic.
+    * `spark_retail_transformation.py`: The PySpark script executed by Dataproc to join tables and apply business logic.
+* **`setup_retail_schema.sql`**: Contains the DDL (Data Definition Language) used in BigQuery to initialize the dataset and table schemas.
+* **`dags/`**: The Airflow DAG definition script.
+* **`.env`**: Configuration for `GOOGLE_APPLICATION_CREDENTIALS` and local environment variables.
 
-If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://www.astronomer.io/docs/astro/deploy-code/
+---
 
-Contact
-=======
+## 🛠️ Tech Stack & Resources
+* **Orchestrator:** Apache Airflow (via Astro CLI).
+* **Compute:** Google Dataproc Serverless (Spark 3.x).
+* **Storage:** Google Cloud Storage (GCS) & BigQuery.
+* **Languages:** Python, PySpark, SQL.
+* **Infrastructure:** Docker (Managed by Astro CLI).
+* **Security:** IAM Service Accounts with granular roles (BigQuery Admin, Dataproc Worker, Storage Object Admin).
 
-The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
+---
+
+## 🚀 Key Features & Implementation
+* **Hybrid Orchestration:** Optimized `docker-compose.yaml` and Astro settings to allow a local container to authenticate with GCP.
+* **Serverless Transformation:** Used Dataproc Serverless to run Spark jobs, avoiding the cost of maintaining a 24/7 cluster.
+* **Dynamic Batching:** Generated unique `batch_id` using `uuid` for every Dataproc run to prevent naming collisions.
+* **Advanced IAM Management:** Hands-on experience configuring Service Account permissions and network URIs for Dataproc execution.
+
+---
+
+## 🖼️ Execution Evidence
+
+### 1. Airflow Orchestration
+The DAG manages task dependencies, ensuring the transformation only starts after data ingestion is complete.
+![Airflow DAG](./Images/02.%20Graph_Apache_Airflow.png)
+
+### 2. Cloud Processing (Dataproc)
+Serverless execution of Spark jobs, showing the batch processing successfully completed.
+![Dataproc Batch](./Images/03.%20Batches_Data_Proc.png)
+
+### 3. Final Result in BigQuery
+Preview of the `enriched_orders` table showing calculated fields like `total_price` and `price_tier`.
+![BigQuery Results](./Images/04.%20Nueva_Tabla_Spark.png)
+
+---
+
+## 🔧 How to Run
+1.  **Clone the repo.**
+2.  **Setup GCP Credentials:** Place your Service Account JSON key in `include/keys/airflow-sa.json` (or your mapped directory).
+3.  **Configure Environment:** Ensure your `.env` file points to the correct credentials path inside the container.
+4.  **Start the Environment:**
+    ```bash
+    astro dev start
+    ```
+5.  **Set Airflow Variables:** Create the `gcpproject_id_new` variable in the Airflow UI.
+
+---
