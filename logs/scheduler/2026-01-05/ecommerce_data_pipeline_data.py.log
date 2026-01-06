@@ -1,0 +1,144 @@
+[2026-01-05T14:26:14.070+0000] {processor.py:161} INFO - Started process (PID=44) to work on /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:26:14.072+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ecommerce_data_pipeline_data.py for tasks to queue
+[2026-01-05T14:26:14.077+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:26:14.076+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:26:14.133+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:26:14.125+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ecommerce_data_pipeline_data.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ecommerce_data_pipeline_data.py", line 13, in <module>
+    PROJECT_ID = Variable.get("gcpproject_id_new")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/variable.py", line 143, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable gcpproject_id_new does not exist'
+[2026-01-05T14:26:14.146+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:26:14.167+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ecommerce_data_pipeline_data.py took 0.104 seconds
+[2026-01-05T14:26:44.409+0000] {processor.py:161} INFO - Started process (PID=56) to work on /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:26:44.412+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ecommerce_data_pipeline_data.py for tasks to queue
+[2026-01-05T14:26:44.415+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:26:44.415+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:26:44.458+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:26:44.452+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ecommerce_data_pipeline_data.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ecommerce_data_pipeline_data.py", line 13, in <module>
+    PROJECT_ID = Variable.get("gcpproject_id_new")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/variable.py", line 143, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable gcpproject_id_new does not exist'
+[2026-01-05T14:26:44.459+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:26:44.471+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ecommerce_data_pipeline_data.py took 0.066 seconds
+[2026-01-05T14:27:15.705+0000] {processor.py:161} INFO - Started process (PID=59) to work on /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:27:15.706+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ecommerce_data_pipeline_data.py for tasks to queue
+[2026-01-05T14:27:15.708+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:27:15.708+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:27:15.729+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:27:15.725+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ecommerce_data_pipeline_data.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ecommerce_data_pipeline_data.py", line 13, in <module>
+    PROJECT_ID = Variable.get("gcpproject_id_new")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/variable.py", line 143, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable gcpproject_id_new does not exist'
+[2026-01-05T14:27:15.730+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:27:15.748+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ecommerce_data_pipeline_data.py took 0.045 seconds
+[2026-01-05T14:27:46.724+0000] {processor.py:161} INFO - Started process (PID=62) to work on /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:27:46.725+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ecommerce_data_pipeline_data.py for tasks to queue
+[2026-01-05T14:27:46.727+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:27:46.727+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:27:46.753+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:27:46.747+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ecommerce_data_pipeline_data.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ecommerce_data_pipeline_data.py", line 13, in <module>
+    PROJECT_ID = Variable.get("gcpproject_id_new")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/variable.py", line 143, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable gcpproject_id_new does not exist'
+[2026-01-05T14:27:46.755+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:27:46.778+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ecommerce_data_pipeline_data.py took 0.056 seconds
+[2026-01-05T14:28:17.150+0000] {processor.py:161} INFO - Started process (PID=65) to work on /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:28:17.152+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ecommerce_data_pipeline_data.py for tasks to queue
+[2026-01-05T14:28:17.155+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:28:17.154+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:28:17.200+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:28:17.193+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ecommerce_data_pipeline_data.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ecommerce_data_pipeline_data.py", line 13, in <module>
+    PROJECT_ID = Variable.get("gcpproject_id_new")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/variable.py", line 143, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable gcpproject_id_new does not exist'
+[2026-01-05T14:28:17.203+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:28:17.225+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ecommerce_data_pipeline_data.py took 0.079 seconds
+[2026-01-05T14:28:47.461+0000] {processor.py:161} INFO - Started process (PID=68) to work on /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:28:47.462+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ecommerce_data_pipeline_data.py for tasks to queue
+[2026-01-05T14:28:47.464+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:28:47.464+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:28:47.496+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:28:47.490+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ecommerce_data_pipeline_data.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ecommerce_data_pipeline_data.py", line 13, in <module>
+    PROJECT_ID = Variable.get("gcpproject_id_new")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/variable.py", line 143, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable gcpproject_id_new does not exist'
+[2026-01-05T14:28:47.497+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:28:47.510+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ecommerce_data_pipeline_data.py took 0.051 seconds
+[2026-01-05T14:29:17.698+0000] {processor.py:161} INFO - Started process (PID=71) to work on /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:29:17.699+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ecommerce_data_pipeline_data.py for tasks to queue
+[2026-01-05T14:29:17.701+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:29:17.701+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:29:17.728+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:29:17.722+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ecommerce_data_pipeline_data.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ecommerce_data_pipeline_data.py", line 13, in <module>
+    PROJECT_ID = Variable.get("gcpproject_id_new")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/variable.py", line 143, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable gcpproject_id_new does not exist'
+[2026-01-05T14:29:17.729+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:29:17.743+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ecommerce_data_pipeline_data.py took 0.047 seconds
+[2026-01-05T14:29:48.904+0000] {processor.py:161} INFO - Started process (PID=74) to work on /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:29:48.905+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ecommerce_data_pipeline_data.py for tasks to queue
+[2026-01-05T14:29:48.906+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:29:48.906+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:29:48.933+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:29:48.928+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ecommerce_data_pipeline_data.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ecommerce_data_pipeline_data.py", line 13, in <module>
+    PROJECT_ID = Variable.get("gcpproject_id_new")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/variable.py", line 143, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable gcpproject_id_new does not exist'
+[2026-01-05T14:29:48.935+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:29:48.949+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ecommerce_data_pipeline_data.py took 0.048 seconds
+[2026-01-05T14:30:19.885+0000] {processor.py:161} INFO - Started process (PID=77) to work on /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:30:19.886+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ecommerce_data_pipeline_data.py for tasks to queue
+[2026-01-05T14:30:19.888+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:30:19.888+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:30:19.918+0000] {logging_mixin.py:188} INFO - [2026-01-05T14:30:19.912+0000] {dagbag.py:348} ERROR - Failed to import: /opt/airflow/dags/ecommerce_data_pipeline_data.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/dagbag.py", line 344, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 843, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/airflow/dags/ecommerce_data_pipeline_data.py", line 13, in <module>
+    PROJECT_ID = Variable.get("gcpproject_id_new")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/variable.py", line 143, in get
+    raise KeyError(f"Variable {key} does not exist")
+KeyError: 'Variable gcpproject_id_new does not exist'
+[2026-01-05T14:30:19.920+0000] {processor.py:842} WARNING - No viable dags retrieved from /opt/airflow/dags/ecommerce_data_pipeline_data.py
+[2026-01-05T14:30:19.934+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ecommerce_data_pipeline_data.py took 0.052 seconds

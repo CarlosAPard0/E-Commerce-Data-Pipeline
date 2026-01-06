@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  airflow:
+    image: apache/airflow:2.8.1
+    container_name: airflow
+    restart: always
+
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: sqlite:////opt/airflow/airflow.db
+
+      GOOGLE_APPLICATION_CREDENTIALS: /keys/airflow-sa.json
+
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+
+      - ./keys:/keys:ro
+
+    ports:
+      - "8080:8080"
+
+    command: >
+      bash -c "
+      airflow db init &&
+      airflow users create
+        --username admin
+        --firstname admin
+        --lastname admin
+        --role Admin
+        --email admin@local
+        --password admin &&
+      airflow webserver & airflow scheduler
+      "
